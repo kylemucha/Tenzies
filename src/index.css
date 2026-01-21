@@ -1,18 +1,56 @@
 * {
     box-sizing: border-box;
+    font-family: "Karla", sans-serif;
 }
 
 body {
     margin: 0;
-    background: #0B2434;
+    background-color: #0B2434;
+    padding: 20px;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+div#root {
+    height: 100%;
+    width: 100%;
+    max-height: 400px;
+    max-width: 400px;
+}
+
+main {
+    background-color: #F5F5F5;
+    height: 100%;
+    border-radius: 5px;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-main {
-    background-color: white;
-    height: 320px;
-    width: 320px;
-    border-radius: 10px;
+
+.die-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 12px;
+    width: 100%;
+    padding: 20px;
+    justify-items: center;
 }
+
+.die-shape {
+    outline: none;
+    border: none;
+    
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+    height: 35.84px;
+    width: 35.84px;
+    padding: 0;
+    font-size: 21px;
+    font-weight: bold;
+    background-color: #FFFFFF;
+    color: #2B283A
+}
+

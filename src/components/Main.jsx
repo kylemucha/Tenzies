@@ -1,9 +1,21 @@
+import Die from "./Die"
+
 export default function Main() {
     return (
         <>
             <main>
-                <p>random girl:AP</p>
-                <p>Julia:</p>
+                <div className="die-grid">
+                    <Die value={1}/>
+                    <Die value={2}/>
+                    <Die value={3}/>
+                    <Die value={4}/>
+                    <Die value={5}/>
+                    <Die value={6}/>
+                    <Die value={1}/>
+                    <Die value={2}/>
+                    <Die value={3}/>
+                    <Die value={4}/>
+                </div>
             </main>
         </>
     )
