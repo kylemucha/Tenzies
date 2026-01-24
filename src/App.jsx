@@ -1,22 +1,43 @@
-import Main from "./components/Main"
+import { useState } from "react"
+import Die from "./components/Die"
 
-/**
- * Challenge:
- * 
- * - Style the <main> and <Die> components 
- *   to look like they do in the slide
- *      - Hints: Create a container to hold the 10 instances
- *        of the Die component, and use CSS Grid to lay them
- *        out evenly in 2 rows of 5 columns
- *      - Use flexbox on main to center the dice container
- *        in the center of the page
- */
-
+    /**
+     * Challenge: Create a `Roll Dice` button that will re-roll
+     * all 10 dice
+     * 
+     * Clicking the button should generate a new array of numbers
+     * and set the `dice` state to that new array (thus re-rendering
+     * the array to the page)
+     */
 
 export default function App() {
+
+    const [arrayOfDice, setArrayOfDice] = useState(generateAllNewDice());
+    
+    function generateAllNewDice() {
+        return new Array(10)
+            .fill(0)
+            .map(() => Math.ceil(Math.random() * 6))
+    }
+
+    function getNewDice() {
+        setArrayOfDice(generateAllNewDice());
+    }
+
+    const diceElements = arrayOfDice.map(num => <Die value={num} />)
+
     return (
         <>
-            <Main />
+            <main>
+                <div className="die-grid">
+                    {diceElements}
+                </div>
+
+                <button className="roll-button"
+                    onClick={getNewDice}>
+                        Roll
+                </button>
+            </main>
         </>
     )
 }
