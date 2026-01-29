@@ -6,17 +6,14 @@ import {nanoid} from "nanoid"
 export default function App() {
 
     /**
-     * Challenge: Create a function `hold` that takes
-     * `id` as a parameter. For now, just have the function
-     * console.log(id).
+     * Challenge: Update the `hold` function to flip
+     * the `isHeld` property on the object in the array
+     * that was clicked, based on the `id` prop passed
+     * into the function.
      * 
-     * Then, figure out how to pass that function down to each
-     * instance of the Die component so when each one is clicked,
-     * it logs its own unique ID property. (Hint: there's more
-     * than one way to make that work, so just choose whichever
-     * you want)
-     */
-    
+     * Hint: as usual, there's more than one way to 
+     * accomplish this.
+     */ 
     
 
     const [arrayOfDice, setArrayOfDice] = useState(generateAllNewDice());
