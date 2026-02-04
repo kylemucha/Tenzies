@@ -31,12 +31,15 @@ export default function App() {
     function getNewDice() {
         setArrayOfDice(generateAllNewDice());
     }
-
+    
     function hold(id) {
-        console.log(id);
+        setArrayOfDice(prevDie => prevDie.map(die =>
+            die.id === id ? {...die, isHeld: !die.isHeld} : die
+        ))
     }
 
-    const diceElements = arrayOfDice.map(obj => <Die 
+    const diceElements = arrayOfDice.map(obj => 
+        <Die 
         key={obj.id}
         onClick={() => hold(obj.id)}
         value={obj.value} 
